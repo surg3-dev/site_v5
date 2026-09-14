@@ -41,6 +41,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   display:inline-block;line-height:1;white-space:nowrap;
 }
 .wordmark .three{letter-spacing:-.12em;display:inline-block}
+.lead .surg{white-space:nowrap;display:inline-block;line-height:1;margin-right:.18em}
+.lead .surg .w{display:inline-block;font-weight:400;letter-spacing:-.075em;transform:scaleX(1.14);transform-origin:left center}
+.lead .surg .w span{letter-spacing:-.12em}
+.lead .surg .tm{font-size:.42em;vertical-align:.68em;letter-spacing:0;margin-left:9px;color:inherit}
 
 /* ============ SHARED ============ */
 .sec{position:relative;padding:clamp(100px,14vh,170px) 6vw;scroll-margin-top:70px}
@@ -119,7 +123,7 @@ h3{font-size:clamp(20px,1.9vw,26px);font-weight:500;letter-spacing:-.03em}
 #mobileMenu .mfoot{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap}
 
 /* ============ HERO ============ */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:120px 6vw 90px}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:120px 6vw 90px;background:radial-gradient(120% 95% at 85% 8%,rgba(59,130,246,.36) 0%,rgba(59,130,246,.12) 36%,rgba(59,130,246,0) 62%),linear-gradient(148deg,#070709 0%,#0b0b0c 52%,#0e1730 100%)}
 .hero canvas{position:absolute;right:-4%;top:0;width:78%;height:100%;opacity:.9;will-change:transform}
 .hero .wrap{position:relative;z-index:3;max-width:1320px;margin:0 auto;width:100%}
 .hero .kicker{margin-bottom:44px}
@@ -163,7 +167,7 @@ body.loaded .mi{transform:translateY(0)}
 .h-sec.dark .h-panel .foot{color:#777d84}
 .h-panel .foot b{color:#3c4046;font-weight:500}
 .h-sec.dark .h-panel .foot b{color:#c7cacf}
-.h-close{width:min(60vw,780px);flex:none;padding:0 5vw 0 0;display:flex;flex-direction:justify-content:center;align-items:center}
+.h-close{width:min(60vw,780px);flex:none;padding:0 5vw 0 0;display:flex;justify-content:center;align-items:center}
 .h-close .card{border-top:1px solid var(--line);padding-top:38px}
 .h-sec.dark .h-close .card{border-color:var(--line-dark)}
 .h-close .st{font-size:clamp(24px,2.9vw,40px);line-height:1.08;letter-spacing:-.045em;font-weight:400}
@@ -173,13 +177,62 @@ body.loaded .mi{transform:translateY(0)}
 .h-sec.dark .h-head .desc{color:#9da1a7}
 
 /* systems panel extras */
-.surg3-mega{font-size:clamp(48px,6vw,92px);letter-spacing:-.075em;transform:scaleX(1.14);transform-origin:left center;display:inline-block;font-weight:400}
+.surg3-mega{font-size:clamp(42px,5vw,72px);letter-spacing:-.075em;transform:scaleX(1.14);transform-origin:left center;display:inline-block;font-weight:400;line-height:1}
+.surg3-mega .tm{font-size:.42em;letter-spacing:0;vertical-align:.72em;margin-left:.28em;color:currentColor}
+.surg3-mega .three{letter-spacing:-.12em;display:inline-block}
 .out-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);margin-top:10px}
 .out-grid div{background:var(--ink);padding:26px 18px}
 .out-grid b{font-size:15px;font-weight:500;display:block;letter-spacing:-.02em}
 .out-grid span{font-size:11px;color:#777d84;margin-top:6px;display:block;line-height:1.45}
 
 /* ============ MARQUEE (work stream) ============ */
+/* architecture finale — convergence of layers A–D */
+.h-close .convg{border-top:1px solid var(--line-dark);padding:40px 0 38px;display:grid;grid-template-columns:212px 64px 1fr;column-gap:0;align-items:center;max-width:640px}
+.convg-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+.convg-grid div{background:var(--ink);padding:13px 14px;transition:background .5s var(--ease)}
+.convg-grid .b{background:linear-gradient(118deg,rgba(59,130,246,.32) 0%,rgba(59,130,246,.16) 46%,#0d1117 100%);border-left:2px solid var(--blue)}
+.convg-grid .b b{color:#fff}
+.convg-grid i{font-style:normal;font-family:var(--mono);font-size:8.5px;letter-spacing:.24em;color:#5f646b;display:block}
+.convg-grid .b i{color:#f7f7f5}
+.convg-grid b{font-size:13px;font-weight:500;letter-spacing:-.01em;margin-top:7px;display:block}
+.convg-grid .b b{font-weight:400;letter-spacing:-.075em;transform:scaleX(1.14);transform-origin:left center;display:inline-block}
+.convg-grid div:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+.convg-lines{position:relative;height:76px}
+.convg-lines span{position:absolute;left:0;top:6px;width:100%;height:1px;background:var(--line-dark);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease)}
+.convg-lines span::before{content:"";position:absolute;left:-2.5px;top:-1.5px;width:4px;height:4px;border-radius:50%;background:#5f646b}
+.convg-lines span::after{content:"";position:absolute;left:-1.5px;top:-.5px;width:1px;height:3px;background:var(--line-dark)}
+/* B (Surg3) as the source cell: anchor line on B's center-line so it reads grid → resolve */
+.convg-lines .c-dot{position:absolute;left:-3px;top:3px;width:7px;height:7px;border-radius:50%;background:#5f646b}
+.h-sticky.converged .convg-lines .c-dot{opacity:1;transition:opacity .4s}
+.convg .ndot{width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px rgba(59,130,246,.7);display:inline-block;align-self:center;opacity:0;transition:opacity .6s var(--ease) 1.15s}
+.h-sticky.converged .convg-lines span{transform:scaleX(1)}
+.h-sticky.converged .convg-lines span:nth-of-type(3){transition-delay:.4s}
+.h-sticky.converged .convg-lines span:nth-of-type(4){transition-delay:.55s}
+.h-sticky.converged .ndot{opacity:1}
+.h-sticky.converged .convg-grid div{background:#0d1117}
+.h-sticky.converged .convg-grid .b{background:linear-gradient(118deg,rgba(59,130,246,.4) 0%,rgba(59,130,246,.2) 50%,#0d1117 100%)}
+.convg-resolve{min-width:0;padding-top:2px;position:relative;z-index:5}
+.convg-resolve .word{font-size:clamp(30px,3.2vw,42px);line-height:.75;font-weight:400;letter-spacing:-.075em;transform:scaleX(1.14);transform-origin:left center;display:inline-block;white-space:nowrap;opacity:0;transition:opacity .7s var(--ease) .7s}
+.h-sticky.converged .convg-resolve .word{opacity:1}
+.convg-resolve .word .m.three{letter-spacing:-.12em}
+.convg-resolve .word .m{display:inline-block;opacity:0;transform:translateY(28%);transition:opacity .9s var(--ease) .75s,transform .9s var(--ease) .75s}
+.h-sticky.converged .convg-resolve .word .m{opacity:1;transform:translateY(0)}
+.convg-resolve .tm{font-size:.42em;vertical-align:.75em;color:#9da1a7;letter-spacing:0;margin-left:9px;opacity:0;transition:opacity .7s var(--ease) 1s}
+.h-sticky.converged .convg-resolve .tm{opacity:1}
+.convg-resolve .model{font-size:15px;line-height:1.6;color:#9da1a7;max-width:560px;letter-spacing:-.005em;margin-top:14px;opacity:0;transition:opacity .8s var(--ease) 1.45s}
+.h-sticky.converged .convg-resolve .model{opacity:1}
+.convg-resolve .say{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:20px;opacity:0;transform:translateY(10px);transition:opacity .8s var(--ease) 1.25s,transform .8s var(--ease) 1.25s}
+.h-sticky.converged .convg-resolve .say{opacity:1;transform:none}
+.convg-resolve .say b{font-size:15px;font-weight:500;letter-spacing:.005em;padding-left:0}
+.convg-resolve .say i{font-style:normal;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#5f646b}
+.convg-resolve .cap{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:#4d525a;margin-top:14px}
+@media (max-width:600px){
+  .h-close{width:86vw}
+  .h-close .convg{grid-template-columns:1fr;row-gap:34px}
+  .convg-grid{width:100%}
+  .convg-lines{display:none}
+  .convg .ndot{display:inline-block;opacity:1}
+}
 .marquee-wrap{margin-top:70px;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:26px 0}
 .mq{overflow:hidden;position:relative;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
@@ -191,26 +244,25 @@ body.loaded .mi{transform:translateY(0)}
 .mq:hover .mq-track{animation-play-state:paused}
 .mchip{flex:none;display:inline-flex;align-items:center;padding:11px 18px;border:1px solid var(--line-dark);border-radius:999px;font-size:13px;color:#c2c5ca;letter-spacing:.01em;background:rgba(255,255,255,.025);white-space:nowrap}
 .mchip .hnd{color:#5f646b;margin-left:12px}
-.work-statement{margin-top:76px;display:grid;grid-template-columns:1.4fr .9fr;gap:6vw;align-items:end}
+.work-statement{display:grid;grid-template-columns:1.4fr .9fr;gap:6vw;align-items:end}
+.sec>.work-statement{margin-top:120px}
 .work-note{font-size:12px;color:#777d84;letter-spacing:.05em;line-height:1.7;border-left:1px solid var(--line-dark);padding-left:22px}
 
 /* ============ FLOWS (revenue / operations) ============ */
 .flow-lead{margin-top:10px}
 .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:72px}
-.flow .st{background:#fff;padding:34px 26px 40px;position:relative;min-height:250px;display:flex;flex-direction:column}
+.flow .st{background:#fff;padding:36px 26px 44px;position:relative;display:flex;flex-direction:column}
 .flow .st:before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
 .flow.in .st:before{transform:scaleX(1)}
 .flow.in .st:nth-child(1):before{transition-delay:.1s}.flow.in .st:nth-child(2):before{transition-delay:.25s}
 .flow.in .st:nth-child(3):before{transition-delay:.4s}.flow.in .st:nth-child(4):before{transition-delay:.55s}
 .flow.in .st:nth-child(5):before{transition-delay:.7s}
 .flow .num{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:#9a9ea4}
-.flow h3{font-size:19px;font-weight:500;margin-top:34px;letter-spacing:-.02em}
-.flow p{font-size:13.5px;line-height:1.55;color:#63676e;margin-top:14px}
+.flow h3{font-size:21px;font-weight:500;margin-top:30px;letter-spacing:-.02em}
+.flow p{font-size:14px;line-height:1.5;color:#63676e;margin-top:10px}
 .flow .st.human:before{background:var(--blue)}
 .flow .st.human .tag{position:absolute;top:26px;right:24px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-weight:600}
-.foot-rule{margin-top:64px;display:flex;align-items:baseline;gap:22px;flex-wrap:wrap}
-.foot-rule .txt{font-size:clamp(20px,2.4vw,30px);font-weight:400;letter-spacing:-.04em}
-.foot-rule .dim{font-size:12px;color:#8b8f96;letter-spacing:.08em;text-transform:uppercase}
+.flow .st.last:before{background:var(--blue)}
 .ops-duo{display:grid;grid-template-columns:1.15fr .85fr;gap:5vw;margin-top:72px;align-items:start}
 .ops-prin{border-top:1px solid var(--line);padding-top:38px}
 .ops-prin .a{font-size:clamp(22px,2.6vw,34px);letter-spacing:-.04em;font-weight:400;line-height:1.15;max-width:520px}
@@ -251,9 +303,9 @@ body.loaded .mi{transform:translateY(0)}
 .vis-grid .v .q{font-size:clamp(16px,1.5vw,21px);font-weight:500;letter-spacing:-.02em;margin-top:44px}
 .vis-scan{position:absolute;top:0;bottom:0;width:120px;left:0;background:linear-gradient(90deg,transparent,rgba(59,130,246,.07),transparent);animation:scan 8s var(--ease) infinite;pointer-events:none}
 @keyframes scan{0%{left:-15%}50%{left:85%}100%{left:-15%}}
-.vis-close{margin-top:74px;display:flex;align-items:baseline;gap:28px;flex-wrap:wrap}
+.vis-close{margin-top:74px;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
 .vis-close .a{font-size:clamp(26px,3.6vw,50px);letter-spacing:-.055em;font-weight:400}
-.vis-close .b{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#777d84}
+.vis-close .b{font-size:clamp(16px,1.55vw,21px);line-height:1.5;color:#9da1a7;letter-spacing:.005em}
 
 /* business case */
 .case-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:74px}
@@ -267,11 +319,12 @@ body.loaded .mi{transform:translateY(0)}
 .case-phi .b{font-size:14px;color:#63676e;line-height:1.7;max-width:480px}
 
 /* principles */
-.prin{background:var(--paper)}
-.prin-big{font-size:clamp(44px,7vw,110px);letter-spacing:-.07em;line-height:.98;font-weight:400;max-width:1100px}
+.prin{background:var(--paper);color:var(--ink)}
+.prin-big{font-size:clamp(36px,4.5vw,72px);letter-spacing:-.07em;line-height:.98;font-weight:400;max-width:900px;color:var(--ink)}
 .prin-list{margin-top:64px;border-top:1px solid var(--line);max-width:860px}
 .prin-list li{list-style:none;display:grid;grid-template-columns:70px 1fr;padding:24px 0;border-bottom:1px solid var(--line);font-size:clamp(19px,2.4vw,28px);letter-spacing:-.035em;color:#24262a;align-items:baseline}
 .prin-list .no{font-family:var(--mono);font-size:11px;color:#9a9ea4;letter-spacing:.1em}
+.prin-note{font-size:14px;color:#63676e;line-height:1.7;max-width:480px;margin-top:28px}
 .prin-foot{margin-top:80px;display:flex;justify-content:space-between;align-items:end;gap:4vw;flex-wrap:wrap}
 .prin-foot .tagline{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:#6d727a}
 .prin-foot .note{font-size:13px;color:#63676e;max-width:520px;line-height:1.7}
@@ -334,6 +387,11 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   .h-sticky{position:static;height:auto;overflow:visible}
   .h-track{width:auto !important;flex-direction:column;align-items:stretch;transform:none !important;padding-left:0}
   .h-head,.h-panel,.h-close{width:100%;min-width:0}
+  .h-close .convg{position:static;grid-template-columns:1fr;row-gap:30px}
+  .convg-grid{width:100%}
+  .convg-lines{display:none}
+  .convg .ndot{display:inline-block;opacity:1}
+  .convg-resolve .word,.convg-resolve .word .m,.convg-resolve .tm,.convg-resolve .say,.convg-resolve .model{opacity:1;transform:none}
   .hero canvas{transform:none !important}
 }
 </style>
@@ -349,7 +407,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
       <nav class="nav-links" aria-label="Primary">
         <a href="#solutions">Solutions</a>
         <a href="#how">How It Works</a>
-        <a href="#real-estate">Real Estate</a>
+        <a href="#real-estate">Property Operations</a>
         <a href="#principles">About</a>
       </nav>
       <a class="nav-cta" href="#contact">Find Your Leverage <span class="ar">→</span></a>
@@ -362,7 +420,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   <nav aria-label="Mobile">
     <a href="#solutions"><span>Solutions</span><span class="mono">01</span></a>
     <a href="#how"><span>How It Works</span><span class="mono">02</span></a>
-    <a href="#real-estate"><span>Real Estate</span><span class="mono">03</span></a>
+    <a href="#real-estate"><span>Property Operations</span><span class="mono">03</span></a>
     <a href="#principles"><span>About</span><span class="mono">04</span></a>
   </nav>
   <div class="mfoot"><a class="btn btn-solid" href="#contact">Find Your Leverage <span class="ar">→</span></a></div>
@@ -379,7 +437,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
       <span class="mask-line"><span class="mi" style="--d:220ms">in your business.</span></span>
       <span class="mask-line"><span class="mi hero-h2" style="--d:380ms">It's buried in the work.</span></span>
     </h1>
-    <p class="lead" data-reveal style="--d:560ms">Surg3 finds the expensive friction inside real-estate businesses — and engineers the systems that remove it. Across revenue, operations, and the decisions that connect them.</p>
+    <p class="lead" data-reveal style="--d:560ms"><span class="surg" aria-label="Surg3™"><span class="w" aria-hidden="true">surg<span>3</span></span><span class="tm" aria-hidden="true">™</span></span> finds the expensive friction inside real-estate businesses — and engineers the systems that remove it. Across revenue, operations, and the decisions that connect them.</p>
     <div class="cua" data-reveal style="--d:720ms">
       <a class="btn btn-solid" href="#contact">Find Your Leverage <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="#how">See How It Works</a>
@@ -548,7 +606,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
       </div>
       <div class="prop-mid" aria-label="into Surg3">
         <span class="bar l" aria-hidden="true"></span>
-        <span class="surg3-mega">surg<span class="three" aria-hidden="true">3</span></span>
+        <span class="surg3-mega" aria-label="Surg3™">surg<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
         <span class="bar" aria-hidden="true"></span>
       </div>
       <div class="side">
@@ -572,18 +630,14 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
 <section class="sec light" id="revenue" data-theme="light">
   <div class="wrap">
     <p class="kicker" data-reveal><span class="idx">06</span> REVENUE ENGINE</p>
-    <h2 data-reveal style="--d:90ms">More of the demand you already paid to generate should become opportunity.</h2>
-    <p class="lead" data-reveal style="--d:220ms">Not a funnel. An operating system for the revenue your business is already producing — from the moment a signal arrives to the moment it closes.</p>
+    <h2 data-reveal style="--d:90ms">Turn existing demand into opportunity.</h2>
+    <p class="lead" data-reveal style="--d:220ms">Connect the work between inquiry and outcome — without rebuilding the systems you already use.</p>
     <div class="flow" id="revFlow" data-reveal style="--d:300ms">
-      <div class="st"><span class="num">01</span><h3>Inquiry</h3><p>The signal arrives. Every revenue system starts the same way — with a moment of intent.</p></div>
-      <div class="st"><span class="num">02</span><h3>Qualification</h3><p>The right signals become priority — by context, not by luck, not by first-come.</p></div>
-      <div class="st"><span class="num">03</span><h3>Routing</h3><p>It lands with the right person, with the context they need, in the form they work in.</p></div>
-      <div class="st"><span class="num">04</span><h3>Follow-through</h3><p>Momentum is preserved across the handoffs where most conversations quietly die.</p></div>
-      <div class="st"><span class="num">05</span><h3>Outcome</h3><p>A decision is made. An opportunity closes. The loop is visible the whole way through.</p></div>
-    </div>
-    <div class="foot-rule" data-reveal>
-      <span class="txt">Capture → Qualify → Route → Follow through → Outcome.</span>
-      <span class="dim">THE REVENUE ENGINE, END TO END</span>
+      <div class="st"><span class="num">01</span><h3>Inquiry</h3><p>Intent arrives.</p></div>
+      <div class="st"><span class="num">02</span><h3>Qualification</h3><p>Context turns intent into priority.</p></div>
+      <div class="st"><span class="num">03</span><h3>Routing</h3><p>The opportunity reaches the right person.</p></div>
+      <div class="st"><span class="num">04</span><h3>Follow-through</h3><p>Momentum survives the handoff.</p></div>
+      <div class="st last"><span class="num">05</span><h3>Outcome</h3><p>Action becomes revenue.</p></div>
     </div>
   </div>
 </section>
@@ -626,7 +680,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
     </div>
     <div class="vis-close" data-reveal>
       <p class="a">From scattered activity to usable signal.</p>
-      <span class="b">THE LAYER BETWEEN THE BUSINESS AND ITS EXECUTIVES</span>
+      <span class="b">The layer between the business and its executives</span>
     </div>
   </div>
 </section>
@@ -653,7 +707,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
       </div></div>
       <div class="h-panel"><div class="card">
         <p class="num">LAYER B — SURG3</p>
-        <span class="surg3-mega">surg<span class="three" aria-hidden="true">3</span></span>
+        <span class="surg3-mega" aria-label="Surg3™">surg<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
         <p class="desc" style="margin-top:34px">Integration · orchestration · workflow design. The coordinated layer installed above the stack — connecting what's already there, routing work, preserving context from first signal to closed outcome.</p>
         <p class="foot"><b>One layer, not another shelf of tools.</b></p>
       </div></div>
@@ -673,8 +727,22 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
         </div>
         <p class="foot"><b>The only metrics we design for.</b></p>
       </div></div>
-      <div class="h-close"><div class="card">
-        <p class="st">Client systems → Surg3 → Intelligence → Outcome. <span class="soft">That's the entire model.</span></p>
+      <div class="h-close"><div class="card convg">
+        <div class="convg-grid" aria-hidden="true">
+          <div tabindex="0"><i>A</i><b>Your systems</b></div>
+          <div tabindex="0" class="b"><i>B</i><b>surg3</b></div>
+          <div tabindex="0"><i>C</i><b>Intelligence</b></div>
+          <div tabindex="0"><i>D</i><b>Outcome</b></div>
+        </div>
+        <div class="convg-lines" aria-hidden="true">
+          <span class="c-dot"></span>
+          <span></span><span></span><span></span>
+        </div>
+        <div class="convg-resolve">
+          <span class="word" aria-label="Surg3™">surg<span class="m three" aria-hidden="true">3</span></span><span class="tm" aria-hidden="true">™</span>
+          <div class="say"><b>One connected layer.</b><span class="ndot" aria-hidden="true"></span></div>
+          <p class="model">The entire model — existing systems, one operating layer.</p>
+        </div>
       </div></div>
     </div>
   </div>
@@ -704,7 +772,8 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
 <section class="sec prin" id="principles" data-theme="light">
   <div class="wrap">
     <p class="kicker" data-reveal><span class="idx">11</span> PRINCIPLE</p>
-    <p class="prin-big" data-reveal style="--d:90ms">You don't need<br>another AI tool.</p>
+    <p class="prin-big" data-reveal style="--d:90ms">What matters most</p>
+    <p class="prin-note" data-reveal style="--d:140ms">The technology exists to make the outcome possible. The outcome is the only thing worth designing toward. That's what it means to sell the result — not the menu.</p>
     <ul class="prin-list" data-reveal style="--d:220ms">
       <li><span class="no">01</span>More revenue.</li>
       <li><span class="no">02</span>Less repetitive work.</li>
@@ -714,8 +783,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
     </ul>
     <div class="prin-foot" data-reveal>
       <div>
-        <p class="tagline" style="margin-bottom:22px">BUILD &nbsp;·&nbsp; SCALE &nbsp;·&nbsp; SURGE</p>
-        <p class="note">The technology exists to make the outcome possible. The outcome is the only thing worth designing toward. That's what it means to sell the result — not the menu.</p>
+        <p class="tagline">BUILD &nbsp;·&nbsp; SCALE &nbsp;·&nbsp; SURGE</p>
       </div>
       <a class="btn btn-ink" href="#contact">Find Your Leverage <span class="ar">→</span></a>
     </div>
@@ -730,11 +798,11 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
     <h1 data-reveal style="--d:90ms">There's probably work in your business that no longer needs to be done the way it is today.</h1>
     <p class="lead" data-reveal style="--d:220ms">Let's find it. The first conversation isn't a demo. It starts with where the friction lives in your operation — and what it's costing.</p>
     <div class="cua" data-reveal style="--d:340ms">
-      <a class="btn btn-solid" href="mailto:hello@surg3.com?subject=Finding%20leverage%20at%20our%20organization">Find Your Leverage <span class="ar">→</span></a>
+      <a class="btn btn-solid" href="mailto:hello@surg3.io?subject=Finding%20leverage%20at%20our%20organization">Find Your Leverage <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="#leaks">Explore Surg3 <span class="ar">→</span></a>
     </div>
     <div class="hero-meta" data-reveal style="--d:460ms">
-      <span>SURG3</span><span>FIRST CONTACT — HELLO@SURG3.COM</span><span>REAL ESTATE / OPERATING INTELLIGENCE</span>
+      <span>SURG3</span><span>FIRST CONTACT — HELLO@SURG3.IO</span><span>REAL ESTATE / OPERATING INTELLIGENCE</span>
     </div>
   </div>
 </section>
@@ -747,7 +815,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   </div>
   <div class="fm">
     <span>OPERATING INTELLIGENCE FOR REAL ESTATE</span>
-    <a href="mailto:hello@surg3.com">hello@surg3.com</a>
+    <a href="mailto:hello@surg3.io">hello@surg3.io</a>
     <span>© 2026 SURG3</span>
   </div>
 </footer>
@@ -785,6 +853,16 @@ if(revFlow){
 }
 
 /* ---------- pinned horizontal sections ---------- */
+/* architecture finale — converge when the close slide is in view */
+var convg=$(".h-close .convg");
+if(convg){
+  var convgSticky=convg.closest(".h-sticky");
+  if(mqRed.matches){convgSticky.classList.add("converged");}
+  else{
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){convgSticky.classList.add("converged");cio.disconnect();}})},{threshold:.5});
+    cio.observe(convg);
+  }
+}
 function HSec(el){
   this.el=el;
   this.track=$(".h-track",el);
