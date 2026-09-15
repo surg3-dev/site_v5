@@ -61,7 +61,7 @@ h3{font-size:clamp(20px,1.9vw,26px);font-weight:500;letter-spacing:-.03em}
 .lead{font-size:clamp(16px,1.55vw,21px);line-height:1.5;color:#61666e;max-width:640px;margin-top:30px}
 .dark .lead{color:#9da1a7}
 .mono{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.statement{font-size:clamp(26px,3.4vw,46px);font-weight:400;letter-spacing:-.05em;line-height:1.05;max-width:1000px}
+.statement{font-size:clamp(18px,2.1vw,28px);font-weight:400;letter-spacing:-.05em;line-height:1.12;max-width:1000px}
 .statement .soft{color:var(--muted)}
 .dark .statement .soft{color:#858a91}
 .light .statement .soft{color:#6d727a}
@@ -187,6 +187,53 @@ body.loaded .mi{transform:translateY(0)}
 .out-grid b{font-size:15px;font-weight:500;display:block;letter-spacing:-.02em}
 .out-grid span{font-size:11px;color:#777d84;margin-top:6px;display:block;line-height:1.45}
 
+/* ============ H3 VERTICAL VARIANT: card sections that flow normally ============ */
+.v-sec{position:relative;overflow:clip;padding:clamp(100px,14vh,170px) 6vw;scroll-margin-top:70px}
+.v-sec .gridbg{position:absolute;inset:0}
+.v-sec .v-wrap{position:relative;z-index:1;max-width:1320px;margin:0 auto}
+.v-sec .h-head{display:block;width:100%;min-width:0;padding:0 0 22px}
+.v-sec .h-head .card{border-top:0;padding-top:0}
+.v-sec .h-head .card>:first-child{border:0}
+.v-sec .h-head h2{max-width:900px}
+.v-sec .h-head .desc{max-width:640px}
+.v-sec .h-panel,.v-sec .h-close{width:100%;min-width:0;padding:76px 0 0}
+.v-sec .h-panel .card,.v-sec .h-close .card{max-width:980px}
+/* zero the base line+padding: this variant's rule lives on the card's first child (keeps it 1px through the scale pop) */
+.v-sec .h-panel .card,.v-sec .h-close .card{padding-top:0;border-top:0}
+#solutions .h-panel .card{margin-left:6vw}
+/* top rule moves to the card's first child so the counter-scale keeps it a constant 1px */
+.v-sec .card>:first-child{border-top:1px solid var(--line);margin-top:36px}
+/* headroom BELOW the rule: the rule is the heading's border-top, so padding pushes the text down, not the line */
+.v-sec .h-panel .card>:first-child{padding-top:40px}
+/* section 09 architecture chart (static, no focus animation) */
+.v-sec .h-panel .card>.arch{border-top:0;padding-top:0} /* the chart carries its own frame — no double rule */
+#how .arch{max-width:860px;border:1px solid var(--line-dark);background:var(--line-dark);display:grid;gap:1px}
+#how .arch .row{background:#0d1117;padding:32px 30px 28px;display:flex;flex-direction:column}
+#how .arch .lab{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:#6f747b;margin:0}
+#how .arch h3{font-size:clamp(19px,1.9vw,24px);letter-spacing:-.02em;line-height:1.2;margin-top:44px}
+#how .arch .desc{font-size:14.5px;line-height:1.65;color:#9da1a7;margin-top:22px;max-width:760px}
+#how .arch .chips{margin-top:28px;gap:8px}
+#how .arch .chip{padding:8px 14px;font-size:11.5px}
+#how .arch .foot{margin-top:auto;padding-top:22px;font-size:12px;letter-spacing:.05em;color:#777d84}
+#how .arch .foot b{color:#c7cacf;font-weight:500}
+/* row B — the surg3 layer */
+#how .arch .row.b{background:linear-gradient(118deg,rgba(59,130,246,.30) 0%,rgba(59,130,246,.14) 46%,#0d1117 100%);border-left:2px solid var(--blue)}
+#how .arch .row.b .lab{color:#f7f7f5}
+#how .arch .mega{display:inline-block;margin-top:44px;font-size:clamp(30px,3vw,44px);font-weight:400;letter-spacing:-.075em;line-height:.75;transform:scaleX(1.14);transform-origin:left center;white-space:nowrap;color:#fff}
+#how .arch .mega .three{letter-spacing:-.12em;display:inline-block}
+#how .arch .mega .tm{font-size:.42em;vertical-align:.72em;margin-left:.25em;letter-spacing:0;color:#9da1a7}
+#how .arch .row.b .desc{margin-top:30px}
+/* row D — the outcome grid */
+#how .arch .ogrid{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+#how .arch .ogrid div{background:#0d1117;padding:20px 18px}
+#how .arch .ogrid b{font-size:14px;font-weight:500;display:block;letter-spacing:-.02em;color:#e9e9e7}
+#how .arch .ogrid span{font-size:11px;color:#777d84;margin-top:6px;display:block;line-height:1.5}
+#how .arch .row.b .foot{color:#9da1a7}
+.h-sec.dark.v-sec .card>:first-child{border-top-color:var(--line-dark)}
+.v-sec .h-close{padding-top:44px}
+.v-sec .card{will-change:transform,opacity;transform-origin:50% 50%}
+.v-sec .card>*{transform-origin:0 50%}
+
 /* ============ MARQUEE (work stream) ============ */
 /* architecture finale — convergence of layers A–D */
 .h-close .convg{border-top:1px solid var(--line-dark);padding:40px 0 38px;display:grid;grid-template-columns:212px 64px 1fr;column-gap:0;align-items:center;max-width:640px}
@@ -205,26 +252,26 @@ body.loaded .mi{transform:translateY(0)}
 .convg-lines span::after{content:"";position:absolute;left:-1.5px;top:-.5px;width:1px;height:3px;background:var(--line-dark)}
 /* B (Surg3) as the source cell: anchor line on B's center-line so it reads grid → resolve */
 .convg-lines .c-dot{position:absolute;left:-3px;top:3px;width:7px;height:7px;border-radius:50%;background:#5f646b}
-.h-sticky.converged .convg-lines .c-dot{opacity:1;transition:opacity .4s}
+.h-sec.converged .convg-lines .c-dot{opacity:1;transition:opacity .4s}
 .convg .ndot{width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px rgba(59,130,246,.7);display:inline-block;align-self:center;opacity:0;transition:opacity .6s var(--ease) 1.15s}
-.h-sticky.converged .convg-lines span{transform:scaleX(1)}
-.h-sticky.converged .convg-lines span:nth-of-type(3){transition-delay:.4s}
-.h-sticky.converged .convg-lines span:nth-of-type(4){transition-delay:.55s}
-.h-sticky.converged .ndot{opacity:1}
-.h-sticky.converged .convg-grid div{background:#0d1117}
-.h-sticky.converged .convg-grid .b{background:linear-gradient(118deg,rgba(59,130,246,.4) 0%,rgba(59,130,246,.2) 50%,#0d1117 100%)}
+.h-sec.converged .convg-lines span{transform:scaleX(1)}
+.h-sec.converged .convg-lines span:nth-of-type(3){transition-delay:.4s}
+.h-sec.converged .convg-lines span:nth-of-type(4){transition-delay:.55s}
+.h-sec.converged .ndot{opacity:1}
+.h-sec.converged .convg-grid div{background:#0d1117}
+.h-sec.converged .convg-grid .b{background:linear-gradient(118deg,rgba(59,130,246,.4) 0%,rgba(59,130,246,.2) 50%,#0d1117 100%)}
 .convg-resolve{min-width:0;padding-top:2px;position:relative;z-index:5}
 .convg-resolve .word{font-size:clamp(30px,3.2vw,42px);line-height:.75;font-weight:400;letter-spacing:-.075em;transform:scaleX(1.14);transform-origin:left center;display:inline-block;white-space:nowrap;opacity:0;transition:opacity .7s var(--ease) .7s}
-.h-sticky.converged .convg-resolve .word{opacity:1}
+.h-sec.converged .convg-resolve .word{opacity:1}
 .convg-resolve .word .m.three{letter-spacing:-.12em}
 .convg-resolve .word .m{display:inline-block;opacity:0;transform:translateY(28%);transition:opacity .9s var(--ease) .75s,transform .9s var(--ease) .75s}
-.h-sticky.converged .convg-resolve .word .m{opacity:1;transform:translateY(0)}
+.h-sec.converged .convg-resolve .word .m{opacity:1;transform:translateY(0)}
 .convg-resolve .tm{font-size:.42em;vertical-align:.75em;color:#9da1a7;letter-spacing:0;margin-left:9px;opacity:0;transition:opacity .7s var(--ease) 1s}
-.h-sticky.converged .convg-resolve .tm{opacity:1}
+.h-sec.converged .convg-resolve .tm{opacity:1}
 .convg-resolve .model{font-size:15px;line-height:1.6;color:#9da1a7;max-width:560px;letter-spacing:-.005em;margin-top:14px;opacity:0;transition:opacity .8s var(--ease) 1.45s}
-.h-sticky.converged .convg-resolve .model{opacity:1}
+.h-sec.converged .convg-resolve .model{opacity:1}
 .convg-resolve .say{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:20px;opacity:0;transform:translateY(10px);transition:opacity .8s var(--ease) 1.25s,transform .8s var(--ease) 1.25s}
-.h-sticky.converged .convg-resolve .say{opacity:1;transform:none}
+.h-sec.converged .convg-resolve .say{opacity:1;transform:none}
 .convg-resolve .say b{font-size:15px;font-weight:500;letter-spacing:.005em;padding-left:0}
 .convg-resolve .say i{font-style:normal;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#5f646b}
 .convg-resolve .cap{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:#4d525a;margin-top:14px}
@@ -333,6 +380,7 @@ body.loaded .mi{transform:translateY(0)}
 
 /* contact */
 .contact{min-height:92svh;display:flex;align-items:center}
+.contact .wrap{width:100%}
 .contact h1{max-width:1080px;font-size:clamp(23.25px,3.42vw,52.5px);line-height:.94;letter-spacing:-.07em}
 .contact .cua .btn{padding:17px 30px;font-size:14px}
 
@@ -368,6 +416,8 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   .h-head,.h-panel,.h-close{min-width:86vw;min-width:86svw}
   .h-head .card,.h-panel .card,.h-close .card{width:100%}
   .out-grid{grid-template-columns:repeat(2,1fr)}
+  #how .arch .ogrid{grid-template-columns:repeat(2,1fr)}
+  #how .arch{max-width:none}
   .contact .cua{margin-top:40px}
 }
 @media (max-width:600px){
@@ -396,39 +446,41 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   .convg-resolve .word,.convg-resolve .word .m,.convg-resolve .tm,.convg-resolve .say,.convg-resolve .model{opacity:1;transform:none}
   .hero canvas,.hero img.hero-canvas,.hero video.hero-canvas{transform:none !important}
 }
+
+/* ============ solutions preview ============ */
+.solv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-top:0;margin-top:56px}
+.solv-grid .card{display:block;width:auto;border:0}
+.solv-grid h3{font-size:clamp(19px,1.9vw,24px);letter-spacing:-.03em}
+.solv-grid .desc{margin-top:14px;font-size:15px;line-height:1.55;color:#5d626a;max-width:480px}
+.solv-grid .foot{margin-top:22px;padding-top:0}
+.solv-cta{margin-top:48px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+@media (max-width:920px){.solv-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- ================= NAV ================= -->
 <header id="nav" data-theme="dark" role="banner">
   <div class="inner">
     <a class="wordmark" href="#top" aria-label="Surg3 — home">surg<span class="three">3</span></a>
     <div class="nav-right">
       <nav class="nav-links" aria-label="Primary">
-        <a href="#solutions">Solutions</a>
         <a href="#how">How It Works</a>
-        <a href="#real-estate">Property Operations</a>
-        <a href="#principles">About</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="solutions.html#principles">About</a>
       </nav>
       <a class="nav-cta" href="#contact">Find Your Leverage <span class="ar">→</span></a>
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu"><span></span><span></span></button>
     </div>
   </div>
 </header>
-
 <div id="mobileMenu" aria-hidden="true">
   <nav aria-label="Mobile">
-    <a href="#solutions"><span>Solutions</span><span class="mono">01</span></a>
-    <a href="#how"><span>How It Works</span><span class="mono">02</span></a>
-    <a href="#real-estate"><span>Property Operations</span><span class="mono">03</span></a>
-    <a href="#principles"><span>About</span><span class="mono">04</span></a>
+    <a href="#how"><span>How It Works</span><span class="mono">01</span></a>
+    <a href="solutions.html"><span>Workflows</span><span class="mono">02</span></a>
+    <a href="solutions.html#principles"><span>About</span><span class="mono">03</span></a>
   </nav>
   <div class="mfoot"><a class="btn btn-solid" href="#contact">Find Your Leverage <span class="ar">→</span></a></div>
 </div>
 
-<main id="main">
 <!-- ================= HERO ================= -->
 <section class="hero dark" id="top" data-theme="dark">
   <video class="hero-canvas" src="assets/hero-glass.mp4" poster="assets/glass-tower-wide.png" muted playsinline preload="metadata" aria-hidden="true"></video>
@@ -442,7 +494,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
     <p class="lead" data-reveal style="--d:560ms"><span class="surg" aria-label="Surg3™"><span class="w" aria-hidden="true">surg<span>3</span></span><span class="tm" aria-hidden="true">™</span></span> finds the expensive friction inside real-estate businesses — and engineers the systems that remove it. Across revenue, operations, and the decisions that connect them.</p>
     <div class="cua" data-reveal style="--d:720ms">
       <a class="btn btn-solid" href="#contact">Find Your Leverage <span class="ar">→</span></a>
-      <a class="btn btn-ghost" href="#how">See How It Works</a>
+      <a class="btn btn-ghost" href="solutions.html">Explore the Workflows</a>
     </div>
     <div class="hero-meta" data-reveal style="--d:880ms">
       <span>SURG3</span><span>BUILD — SCALE — SURGE</span><span>AN OPERATING LAYER, NOT ANOTHER TOOL</span>
@@ -451,31 +503,13 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   <div class="scroll-cue" aria-hidden="true"><span class="ln"></span>SCROLL</div>
 </section>
 
-<!-- ================= THE EXECUTIVE QUESTION ================= -->
-<section class="sec light" id="question" data-theme="light">
-  <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">01</span> THE EXECUTIVE QUESTION</p>
-    <h2 data-reveal style="--d:90ms">Where is growth leaking out of the business?</h2>
-    <p class="q-lead" data-reveal style="--d:240ms">Revenue rarely disappears in one dramatic moment. It leaks through friction.</p>
-    <div class="lines">
-      <div class="line" data-reveal style="--d:60ms"><span class="no">01</span><span class="tx">A lead waits.</span></div>
-      <div class="line" data-reveal style="--d:150ms"><span class="no">02</span><span class="tx">A follow-up is scheduled, then missed.</span></div>
-      <div class="line" data-reveal style="--d:240ms"><span class="no">03</span><span class="tx">A document sits in someone's inbox.</span></div>
-      <div class="line" data-reveal style="--d:330ms"><span class="no">04</span><span class="tx">A status update requires another email.</span></div>
-      <div class="line" data-reveal style="--d:420ms"><span class="no">05</span><span class="tx">A team member searches three systems for one answer.</span></div>
-      <div class="line" data-reveal style="--d:510ms"><span class="no">06</span><span class="tx">A decision waits for information that already exists.</span></div>
-    </div>
-    <p class="lead q-close" data-reveal>Each one is small. Together, they are the cost of the business.</p>
-  </div>
-</section>
-
 <!-- ================= H1: WHERE GROWTH LEAKS ================= -->
 <section class="h-sec light" id="leaks" data-theme="light" aria-label="Where growth leaks">
   <div class="h-sticky">
     <div class="h-track">
       <div class="h-head">
         <div class="card">
-          <p class="kicker"><span class="idx">02</span> WHERE GROWTH LEAKS</p>
+          <p class="kicker">WHERE GROWTH LEAKS</p>
           <h2>The problem is rarely the demand.</h2>
           <p class="desc">It's what happens between the demand and the outcome. Five places it leaks — in almost every business we see.</p>
         </div>
@@ -521,7 +555,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
 <section class="sec dark" id="work" data-theme="dark">
   <div class="gridbg" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">03</span> THE WORK NOBODY PLANNED</p>
+    <p class="kicker" data-reveal>THE WORK NOBODY PLANNED</p>
     <h2 data-reveal style="--d:90ms">The work nobody planned to hire people for.</h2>
     <p class="lead" data-reveal style="--d:220ms">It accumulates quietly — thousands of small movements between systems, people, and time. Each one creates a handoff. Each handoff is a place for value to leak — and a place for a system to earn its keep.</p>
   </div>
@@ -545,215 +579,85 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   </div>
 </section>
 
-<!-- ================= H2: WHERE THE WORK GOES ================= -->
-<section class="h-sec light" id="solutions" data-theme="light" aria-label="Where the work goes — the four operating layers">
-  <div class="h-sticky">
-    <div class="h-track">
+<!-- ================= H2: THE ARCHITECTURE ================= -->
+<section class="v-sec h-sec dark" id="how" data-theme="dark" aria-label="How it works — the Surg3 architecture">
+    <div class="gridbg" aria-hidden="true"></div>
+    <div class="v-wrap">
       <div class="h-head">
         <div class="card">
-          <p class="kicker"><span class="idx">04</span> WHERE THE WORK GOES</p>
-          <h2>Four operating layers.</h2>
-          <p class="desc">Surg3 works where value actually moves. The same four layers — across every real-estate model.</p>
-        </div>
-      </div>
-      <div class="h-panel"><div class="card">
-        <p class="num">LAYER 01</p>
-        <h3>Demand Capture</h3>
-        <p class="desc">Inquiry. Qualification. Routing. Follow-through. The work of turning attention into opportunity — before it cools.</p>
-        <p class="foot"><b>The question that matters:</b> how much demand are you already paying for that never becomes revenue?</p>
-      </div></div>
-      <div class="h-panel"><div class="card">
-        <p class="num">LAYER 02</p>
-        <h3>Transaction Workflow</h3>
-        <p class="desc">Sourcing. Diligence. Paperwork. Closing. The work of moving a deal from intent to signature without losing momentum.</p>
-        <p class="foot"><b>The question that matters:</b> where in the pipeline does speed stop compounding?</p>
-      </div></div>
-      <div class="h-panel"><div class="card">
-        <p class="num">LAYER 03</p>
-        <h3>Property Operations</h3>
-        <p class="desc">Requests. Maintenance. Vendors. Residents. The work of keeping a large estate running without a large coordination overhead.</p>
-        <p class="foot"><b>The question that matters:</b> what happens to your margins as the estate grows?</p>
-      </div></div>
-      <div class="h-panel"><div class="card">
-        <p class="num">LAYER 04</p>
-        <h3>Executive Signal</h3>
-        <p class="desc">Reporting. Exceptions. Decisions. The work of knowing what matters — before it becomes a meeting.</p>
-        <p class="foot"><b>The question that matters:</b> what do you have to ask for, that the business should simply tell you?</p>
-      </div></div>
-      <div class="h-close"><div class="card">
-        <p class="st">Different businesses. The same friction. <span class="soft">The same kind of leverage.</span></p>
-      </div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROPERTY MANAGEMENT ================= -->
-<section class="sec dark" id="real-estate" data-theme="dark">
-  <div class="gridbg" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">05</span> THE STRONGEST CASE — PROPERTY MANAGEMENT</p>
-    <h2 data-reveal style="--d:90ms">Property management doesn't scale by adding more coordination.</h2>
-    <p class="lead" data-reveal style="--d:220ms">The workload is repetitive by nature. Requests, maintenance, vendors, renewals, invoices, status checks. The cost was never the work — it was the coordination the work requires, repeated at scale.</p>
-    <div class="prop-flow" data-reveal style="--d:320ms">
-      <div class="side">
-        <h4>The work, as it runs today</h4>
-        <ul>
-          <li>Maintenance coordination<span class="hnd">→</span></li>
-          <li>Tenant requests<span class="hnd">→</span></li>
-          <li>Vendor communication<span class="hnd">→</span></li>
-          <li>Renewals<span class="hnd">→</span></li>
-          <li>Reporting &amp; invoices<span class="hnd">→</span></li>
-          <li>Status checks<span class="hnd">→</span></li>
-        </ul>
-      </div>
-      <div class="prop-mid" aria-label="into Surg3">
-        <span class="bar l" aria-hidden="true"></span>
-        <span class="surg3-mega" aria-label="Surg3™">surg<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
-        <span class="bar" aria-hidden="true"></span>
-      </div>
-      <div class="side">
-        <h4>What the business gets back</h4>
-        <ul>
-          <li>Less manual coordination</li>
-          <li>Faster response</li>
-          <li>Better visibility</li>
-          <li>Consistent execution</li>
-        </ul>
-      </div>
-    </div>
-    <div class="prop-goal">
-      <p class="st" data-reveal>The goal isn't to replace people. <span class="soft">It's to remove the work that prevents good people from doing higher-value work.</span></p>
-      <p class="sub" data-reveal style="--d:160ms">Every layer of coordination that dissolves is capacity that reappears — in the residents, in the vendors, in the P&amp;L. The same business. A different cost of running it.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= REVENUE ENGINE ================= -->
-<section class="sec light" id="revenue" data-theme="light">
-  <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">06</span> REVENUE ENGINE</p>
-    <h2 data-reveal style="--d:90ms">Turn existing demand into opportunity.</h2>
-    <p class="lead" data-reveal style="--d:220ms">Connect the work between inquiry and outcome — without rebuilding the systems you already use.</p>
-    <div class="flow" id="revFlow" data-reveal style="--d:300ms">
-      <div class="st"><span class="num">01</span><h3>Inquiry</h3><p>Intent arrives.</p></div>
-      <div class="st"><span class="num">02</span><h3>Qualification</h3><p>Context turns intent into priority.</p></div>
-      <div class="st"><span class="num">03</span><h3>Routing</h3><p>The opportunity reaches the right person.</p></div>
-      <div class="st"><span class="num">04</span><h3>Follow-through</h3><p>Momentum survives the handoff.</p></div>
-      <div class="st last"><span class="num">05</span><h3>Outcome</h3><p>Action becomes revenue.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= OPERATIONS ENGINE ================= -->
-<section class="sec light" id="operations" data-theme="light" style="background:#fff">
-  <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">07</span> OPERATIONS ENGINE</p>
-    <h2 data-reveal style="--d:90ms">Automation handles the repeatable movement. Humans handle the judgment.</h2>
-    <div class="ops-duo">
-      <div class="ops-flow" data-reveal style="--d:200ms" role="list" aria-label="Operations engine steps">
-        <div class="st" role="listitem"><span class="num">01</span><div><div class="nm">Request</div><div class="ds">A request arrives from any surface — portal, email, phone, or inside a deal.</div></div></div>
-        <div class="st" role="listitem"><span class="num">02</span><div><div class="nm">Context</div><div class="ds">What's already known is gathered before the work begins.</div></div></div>
-        <div class="st" role="listitem"><span class="num">03</span><div><div class="nm">Action</div><div class="ds">The repeatable movement happens on its own.</div></div></div>
-        <div class="st human" role="listitem"><span class="num">04</span><div><div class="nm">Exception</div><div class="ds">The judgment call surfaces to a person — with the context intact.</div></div><span class="tag">Human</span></div>
-        <div class="st" role="listitem"><span class="num">05</span><div><div class="nm">Completion</div><div class="ds">Done is communicated, recorded, and ready for the next step.</div></div></div>
-      </div>
-      <div class="ops-prin" data-reveal style="--d:340ms">
-        <p class="a">An operating layer is only valuable to the degree it removes the coordination between work and completion.</p>
-        <p class="b">That's the line we hold ourselves to in every deployment: if a step in the flow can be repeatable movement, it should be. If it calls for judgment, the system's job is to surface it fast — with the context a decision needs.</p>
-        <p class="pull">Human judgment, amplified by better systems.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EXECUTIVE VISIBILITY ================= -->
-<section class="sec dark" id="signal" data-theme="dark">
-  <div class="gridbg" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">08</span> EXECUTIVE SIGNAL</p>
-    <h2 data-reveal style="--d:90ms">You shouldn't have to ask the business what needs attention.</h2>
-    <p class="lead" data-reveal style="--d:220ms">Executives don't need another dashboard. They need answers — the state of the business, in the form a decision can act on.</p>
-    <div class="vis-grid" data-reveal style="--d:320ms">
-      <div class="vis-scan" aria-hidden="true"></div>
-      <div class="v"><span class="no">SIGNAL / 01</span><p class="q">What changed?</p></div>
-      <div class="v"><span class="no">SIGNAL / 02</span><p class="q">What stalled?</p></div>
-      <div class="v"><span class="no">SIGNAL / 03</span><p class="q">What matters?</p></div>
-      <div class="v"><span class="no">SIGNAL / 04</span><p class="q">What needs a decision?</p></div>
-    </div>
-    <div class="vis-close" data-reveal>
-      <p class="a">From scattered activity to usable signal.</p>
-      <span class="b">The layer between the business and its executives</span>
-    </div>
-  </div>
-</section>
-
-<!-- ================= H3: THE SYSTEMS / ARCHITECTURE ================= -->
-<section class="h-sec dark" id="how" data-theme="dark" aria-label="How it works — the Surg3 architecture">
-  <div class="gridbg" aria-hidden="true"></div>
-  <div class="h-sticky">
-    <div class="h-track">
-      <div class="h-head">
-        <div class="card">
-          <p class="kicker"><span class="idx">09</span> THE ARCHITECTURE</p>
+          <p class="kicker"><span>THE ARCHITECTURE</span></p>
           <h2>The systems already exist.</h2>
-          <p class="desc">Surg3 doesn't ask you to replace them. It installs the layer that makes them behave like one system.</p>
+          <p class="desc">Surg3 doesn't ask you to replace them. It engineers the layer that makes them behave like one system.</p>
         </div>
       </div>
       <div class="h-panel"><div class="card">
-        <p class="num">LAYER A — YOUR SYSTEMS</p>
-        <h3>The operating surface, as it runs today</h3>
-        <div class="chips">
-          <span class="chip">CRM</span><span class="chip">Email</span><span class="chip">Phone</span><span class="chip">PMS</span><span class="chip">Documents</span><span class="chip">Accounting</span><span class="chip">Property data</span>
-        </div>
-        <p class="foot"><b>Everything stays in place.</b> Nothing to migrate, nothing to re-train.</p>
-      </div></div>
-      <div class="h-panel"><div class="card">
-        <p class="num">LAYER B — SURG3</p>
-        <span class="surg3-mega" aria-label="Surg3™">surg<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
-        <p class="desc" style="margin-top:34px">Integration · orchestration · workflow design. The coordinated layer installed above the stack — connecting what's already there, routing work, preserving context from first signal to closed outcome.</p>
-        <p class="foot"><b>One layer, not another shelf of tools.</b></p>
-      </div></div>
-      <div class="h-panel"><div class="card">
-        <p class="num">LAYER C — INTELLIGENCE</p>
-        <h3>AI, where the work demands it</h3>
-        <p class="desc">Understand what's happening. Anticipate what's coming. Prepare what's needed — drafts, routing, summaries, context. The intelligence is quiet. The results are not.</p>
-        <p class="foot">The model is a means. <b>The outcome is the point.</b></p>
-      </div></div>
-      <div class="h-panel"><div class="card">
-        <p class="num">LAYER D — OUTCOME</p>
-        <div class="out-grid">
-          <div><b>Revenue</b><span>More of your demand becomes opportunity.</span></div>
-          <div><b>Labor</b><span>Repetitive coordination disappears from the cost line.</span></div>
-          <div><b>Speed</b><span>Work moves without waiting on a person to move it.</span></div>
-          <div><b>Decisions</b><span>Executives act on signal, not on asks.</span></div>
-        </div>
-        <p class="foot"><b>The only metrics we design for.</b></p>
-      </div></div>
-      <div class="h-close"><div class="card convg">
-        <div class="convg-grid" aria-hidden="true">
-          <div tabindex="0"><i>A</i><b>Your systems</b></div>
-          <div tabindex="0" class="b"><i>B</i><b>surg3</b></div>
-          <div tabindex="0"><i>C</i><b>Intelligence</b></div>
-          <div tabindex="0"><i>D</i><b>Outcome</b></div>
-        </div>
-        <div class="convg-lines" aria-hidden="true">
-          <span class="c-dot"></span>
-          <span></span><span></span><span></span>
-        </div>
-        <div class="convg-resolve">
-          <span class="word" aria-label="Surg3™">surg<span class="m three" aria-hidden="true">3</span></span><span class="tm" aria-hidden="true">™</span>
-          <div class="say"><b>One connected layer.</b><span class="ndot" aria-hidden="true"></span></div>
-          <p class="model">The entire model — existing systems, one operating layer.</p>
+        <div class="arch" role="list" aria-label="The architecture in four layers">
+          <div class="row" role="listitem">
+            <p class="lab"><span>YOUR SYSTEMS</span></p>
+            <h3>The operating surface, as it runs today</h3>
+            <div class="chips">
+              <span class="chip">CRM</span><span class="chip">Email</span><span class="chip">Phone</span><span class="chip">PMS</span><span class="chip">Documents</span><span class="chip">Accounting</span><span class="chip">Property data</span>
+            </div>
+            <p class="foot"><b>Everything stays in place.</b> Nothing to migrate, nothing to re-train.</p>
+          </div>
+          <div class="row b" role="listitem">
+            <span class="mega" aria-label="Surg3™">surg<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
+            <p class="desc">Integration · orchestration · workflow design. The coordinated layer installed above the stack — connecting what's already there, routing work, preserving context from first signal to closed outcome.</p>
+            <p class="foot"><b>One layer, not another shelf of tools.</b></p>
+          </div>
+          <div class="row" role="listitem">
+            <p class="lab"><span>INTELLIGENCE</span></p>
+            <h3>AI, where the work demands it</h3>
+            <p class="desc">Understand what's happening. Anticipate what's coming. Prepare what's needed — drafts, routing, summaries, context. The intelligence is quiet. The results are not.</p>
+            <p class="foot">The model is a means. <b>The outcome is the point.</b></p>
+          </div>
+          <div class="row" role="listitem">
+            <p class="lab"><span>OUTCOME</span></p>
+            <div class="ogrid">
+              <div><b>Revenue</b><span>More of your demand becomes opportunity.</span></div>
+              <div><b>Labor</b><span>Repetitive coordination disappears from the cost line.</span></div>
+              <div><b>Speed</b><span>Work moves without waiting on a person to move it.</span></div>
+              <div><b>Decisions</b><span>Executives act on signal, not on asks.</span></div>
+            </div>
+            <p class="foot"><b>The only metrics we design for.</b></p>
+          </div>
         </div>
       </div></div>
     </div>
-  </div>
 </section>
 
-<!-- ================= BUSINESS CASE ================= -->
+<!-- ================= WORKFLOW STACK (OVERVIEW) ================= -->
+<section class="v-sec h-sec light" id="solutions" data-theme="light" aria-label="The workflow stack">
+    <div class="v-wrap">
+      <div class="h-head">
+        <div class="card">
+          <p class="kicker"><span>WORKFLOW STACK</span></p>
+          <h2>Three independent workflows.</h2>
+          <p class="desc">Each is built for a different team in your business. Each stands alone — and each gets stronger when the others are in place.</p>
+        </div>
+      </div>
+      <div class="h-panel wf"><div class="card">
+        <h3>Revenue Engine</h3>
+       <p class="desc">Inquiry. Qualification. Routing. Follow-through. Closing. The work of moving demand from attention to outcome — before it cools.</p>
+       <p class="foot"><b>The question that matters:</b> how much demand are you already paying for that never becomes revenue?</p>
+      </div></div>
+      <div class="h-panel wf"><div class="card">
+        <h3>Operations Engine</h3>
+        <p class="desc">Requests. Maintenance. Vendors. Renewals. The work of keeping the business running without the coordination overhead.</p>
+        <p class="foot"><b>The question that matters:</b> what happens to your margins as the business grows?</p>
+        </div></div>
+        <div class="h-panel wf"><div class="card">
+          <h3>Executive Signal</h3>
+         <p class="desc">Reporting. Exceptions. Decisions. The work of knowing what matters — before it becomes a meeting.</p>
+         <p class="foot">
+           <b>The question that matters:</b> what do you have to ask for, that the business should simply tell you?
+         </p>
+        </div></div>
+    </div>
+</section><!-- ================= BUSINESS CASE ================= -->
 <section class="sec light" id="case" data-theme="light">
   <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">10</span> THE BUSINESS CASE</p>
+    <p class="kicker" data-reveal>THE BUSINESS CASE</p>
     <h2 data-reveal style="--d:90ms">What is this workflow worth?</h2>
     <p class="lead" data-reveal style="--d:220ms">Before a single line of work is built, every workflow we design must answer the same question: what is this worth to the business?</p>
     <div class="case-grid" data-reveal style="--d:320ms">
@@ -770,41 +674,19 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   </div>
 </section>
 
-<!-- ================= PRINCIPLES / ABOUT ================= -->
-<section class="sec prin" id="principles" data-theme="light">
-  <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">11</span> PRINCIPLE</p>
-    <p class="prin-big" data-reveal style="--d:90ms">What matters most</p>
-    <p class="prin-note" data-reveal style="--d:140ms">The technology exists to make the outcome possible. The outcome is the only thing worth designing toward. That's what it means to sell the result — not the menu.</p>
-    <ul class="prin-list" data-reveal style="--d:220ms">
-      <li><span class="no">01</span>More revenue.</li>
-      <li><span class="no">02</span>Less repetitive work.</li>
-      <li><span class="no">03</span>Faster execution.</li>
-      <li><span class="no">04</span>Better visibility.</li>
-      <li><span class="no">05</span>Better decisions.</li>
-    </ul>
-    <div class="prin-foot" data-reveal>
-      <div>
-        <p class="tagline">BUILD &nbsp;·&nbsp; SCALE &nbsp;·&nbsp; SURGE</p>
-      </div>
-      <a class="btn btn-ink" href="#contact">Find Your Leverage <span class="ar">→</span></a>
-    </div>
-  </div>
-</section>
-
 <!-- ================= CONTACT ================= -->
 <section class="sec dark contact" id="contact" data-theme="dark">
   <div class="gridbg" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">12</span> THE CONVERSATION</p>
+    <p class="kicker" data-reveal>THE CONSULTATION</p>
     <h1 data-reveal style="--d:90ms">There's probably work in your business that no longer needs to be done the way it is today.</h1>
-    <p class="lead" data-reveal style="--d:220ms">Let's find it. The first conversation isn't a demo. It starts with where the friction lives in your operation — and what it's costing.</p>
+    <p class="lead" data-reveal style="--d:220ms">Let's find it. The first consultation isn't a demo. It starts with where the friction lives in your operation — and what it's costing.</p>
     <div class="cua" data-reveal style="--d:340ms">
       <a class="btn btn-solid" href="mailto:hello@surg3.io?subject=Finding%20leverage%20at%20our%20organization">Find Your Leverage <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="#leaks">Explore Surg3 <span class="ar">→</span></a>
     </div>
     <div class="hero-meta" data-reveal style="--d:460ms">
-      <span>SURG3</span><span>FIRST CONTACT — HELLO@SURG3.IO</span><span>REAL ESTATE / OPERATING INTELLIGENCE</span>
+      <span>SURG3</span><span>FIRST CONSULTATION — HELLO@SURG3.IO</span><span>REAL ESTATE / OPERATING INTELLIGENCE</span>
     </div>
   </div>
 </section>
@@ -821,7 +703,6 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
     <span>© 2026 SURG3</span>
   </div>
 </footer>
-
 <script>
 (function(){
 "use strict";
@@ -858,7 +739,7 @@ if(revFlow){
 /* architecture finale — converge when the close slide is in view */
 var convg=$(".h-close .convg");
 if(convg){
-  var convgSticky=convg.closest(".h-sticky");
+  var convgSticky=convg.closest(".h-sec")||convg.parentElement;
   if(mqRed.matches){convgSticky.classList.add("converged");}
   else{
     var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){convgSticky.classList.add("converged");cio.disconnect();}})},{threshold:.5});
@@ -894,7 +775,49 @@ HSec.prototype.frame=function(){
   if(Math.abs(this.tgt-this.cur)<0.0004)this.cur=this.tgt;
   this.track.style.transform="translate3d("+(-this.cur*this.max).toFixed(2)+"px,0,0)";
 };
-var hsecs=$$(".h-sec").map(function(el){return new HSec(el)});
+/* ---------- pinned horizontal sections (vertical .v-sec sections are excluded) ---------- */
+var hsecs=$$(".h-sec").filter(function(el){return !el.classList.contains("v-sec");}).map(function(el){return new HSec(el)});
+
+/* ---------- card focus: cards ease toward their size at viewport center, shrink+fade away from it ---------- */
+var fCards=$$(".v-sec .card").filter(function(el){return !el.closest(".h-head") && !el.closest("#how");}); /* headers stay static, like the standard sections; section 09 chart is static too */
+for(var fi=0;fi<fCards.length;fi++){fCards[fi].__kid=[].slice.call(fCards[fi].childNodes).filter(function(c){return c.nodeType===1 && !/H3$/.test(c.tagName);});}
+var fMin=1e15,fMax=0;
+function fMeasure(){
+  fMin=1e15;fMax=0;
+  for(var i=0;i<fCards.length;i++){
+    var sec=fCards[i].closest(".v-sec");
+    var top=sec.offsetTop;
+    if(top<fMin)fMin=top;
+    var bot=top+sec.offsetHeight;
+    if(bot>fMax)fMax=bot;
+  }
+}
+fMeasure();
+window.__cardFocus=function(){
+  var on=!mqRed.matches&&!mqMob.matches;
+  if(!on){
+    for(var i=0;i<fCards.length;i++){fCards[i].style.transform="";fCards[i].style.opacity="";
+      if(fCards[i].__kid){for(var k2=0;k2<fCards[i].__kid.length;k2++){fCards[i].__kid[k2].style.transform="";}}}
+    return;
+  }
+  var y=w.scrollY||0;
+  if(y+w.innerHeight<fMin-1200||y>fMax+400) return; /* gate: don't touch when far away */
+  var mid=w.innerHeight/2, half=(w.innerHeight/2)+w.innerHeight*0.3;
+  for(var i=0;i<fCards.length;i++){
+    var el=fCards[i];
+    var r=el.getBoundingClientRect();
+    if(r.bottom<-100||r.top>w.innerHeight+100) continue;
+    var c=r.top+r.height/2;
+    var d=c-mid;
+    var t=1-Math.min(1,Math.abs(d)/half);      /* 1 at viewport center, 0 past the edges */
+    var ease=t*t*(3-2*t);                        /* smoothstep */
+    var s=1+0.15*ease;
+    el.style.transform="scale("+s.toFixed(4)+")";
+    el.style.opacity=(0.18+0.82*ease).toFixed(3);
+    var kids=el.__kid;
+    if(kids){for(var k=0;k<kids.length;k++){kids[k].style.transform="scale("+(1/s).toFixed(5)+")";}}
+  }
+};
 
 /* ---------- nav theming ---------- */
 var nav=$("#nav"), themed=$$("[data-theme]").filter(function(el){return el!==nav});
@@ -943,77 +866,13 @@ var heroVideo=(canvas&&canvas.tagName==="VIDEO")?canvas:null;
     new IntersectionObserver(function(es){heroInView=es[0]&&es[0].isIntersecting;},{threshold:0}).observe(heroVideo);
   }
 })();
-var ctx=(canvas&&canvas.tagName==="CANVAS")?canvas.getContext("2d"):null;
-var cw=0,ch=0,t=0.55,dust=[],cVisible=true;
-if(canvas){
-  if(!ctx){ cVisible=false; }
-  else{
-    dust=[];
-    for(var d=0;d<46;d++){dust.push({x:Math.random(),y:Math.random(),r:.4+Math.random()*1.1,s:.00002+Math.random()*.00005});}
-    new IntersectionObserver(function(es){cVisible=es[0].isIntersecting;},{threshold:0}).observe(canvas);
-  }
-}
-function cvResize(){
-  if(!canvas)return;
-  var dpr=Math.min(2,w.devicePixelRatio||1);
-  cw=canvas.clientWidth; ch=canvas.clientHeight;
-  canvas.width=Math.max(1,cw*dpr); canvas.height=Math.max(1,ch*dpr);
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  if(mqRed.matches){cvDraw(0);}
-}
-function cvDraw(dtMs){
-  t+=dtMs*0.00016;
-  ctx.clearRect(0,0,cw,ch);
-  var N=80, turns=2.1;
-  var ax=cw*0.30, aw=cw*0.66, cy=ch*0.52, amp=Math.min(ch*0.30,230);
-  var P=[];
-  for(var i=0;i<N;i++){
-    var u=i/(N-1), a=u*turns*Math.PI*2+t, x=ax+u*aw;
-    P.push([x, cy+Math.sin(a)*amp, cy+Math.sin(a+Math.PI)*amp]);
-  }
-  ctx.lineWidth=1;
-  /* connectors */
-  ctx.strokeStyle="rgba(247,247,245,0.05)";
-  ctx.beginPath();
-  for(i=0;i<N;i+=4){ctx.moveTo(P[i][0],P[i][1]);ctx.lineTo(P[i][0],P[i][2]);}
-  ctx.stroke();
-  /* strands */
-  ctx.strokeStyle="rgba(247,247,245,0.10)";
-  ctx.beginPath();ctx.moveTo(P[0][0],P[0][1]);
-  for(i=1;i<N;i++)ctx.lineTo(P[i][0],P[i][1]);
-  ctx.stroke();
-  ctx.beginPath();ctx.moveTo(P[0][0],P[0][2]);
-  for(i=1;i<N;i++)ctx.lineTo(P[i][0],P[i][2]);
-  ctx.stroke();
-  /* nodes — blue as a rare signal */
-  for(i=0;i<N;i+=2){
-    var blue=(i%7===3);
-    ctx.fillStyle=blue?"rgba(59,130,246,0.8)":"rgba(247,247,245,0.26)";
-    ctx.beginPath();ctx.arc(P[i][0],P[i][1],blue?1.7:1.05,0,6.2832);ctx.fill();
-    ctx.fillStyle=blue?"rgba(59,130,246,0.45)":"rgba(247,247,245,0.14)";
-    ctx.beginPath();ctx.arc(P[i][0],P[i][2],blue?1.7:1.05,0,6.2832);ctx.fill();
-  }
-  /* ambient drift */
-  for(var k=0;k<dust.length;k++){
-    var p=dust[k];
-    p.y-=p.s*dtMs; if(p.y<0)p.y=1;
-    ctx.fillStyle="rgba(247,247,245,0.09)";
-    ctx.beginPath();ctx.arc(p.x*cw,p.y*ch,p.r,0,6.2832);ctx.fill();
-  }
-}
-
 /* ---------- main loop ---------- */
 var last=performance.now();
 var rafOk=true;
 function frameWork(dtMs){
   if(w.__scrubHero){try{w.__scrubHero(dtMs)}catch(e){}}
+  if(w.__cardFocus){try{w.__cardFocus()}catch(e){}}
   for(var i=0;i<hsecs.length;i++){try{hsecs[i].frame()}catch(e){}}
-  if(canvas && cVisible && !mqRed.matches){
-    if(ctx){try{cvDraw(dtMs)}catch(e){}}
-    if(w.scrollY<w.innerHeight*1.2){
-      canvas.style.transform="translate3d(0,"+(Math.min(w.scrollY,w.innerHeight)*0.32).toFixed(1)+"px,0,0)";
-    }
-  }
   navUpdate();
 }
 function loop(now){
