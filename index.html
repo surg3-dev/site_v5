@@ -200,7 +200,6 @@ body.loaded .mi{transform:translateY(0)}
 .v-sec .h-panel .card,.v-sec .h-close .card{max-width:980px}
 /* zero the base line+padding: this variant's rule lives on the card's first child (keeps it 1px through the scale pop) */
 .v-sec .h-panel .card,.v-sec .h-close .card{padding-top:0;border-top:0}
-#solutions .h-panel .card{margin-left:6vw}
 /* top rule moves to the card's first child so the counter-scale keeps it a constant 1px */
 .v-sec .card>:first-child{border-top:1px solid var(--line);margin-top:36px}
 /* headroom BELOW the rule: the rule is the heading's border-top, so padding pushes the text down, not the line */
@@ -366,6 +365,10 @@ body.loaded .mi{transform:translateY(0)}
 .case-phi{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center}
 .case-phi .a{font-size:clamp(24px,3vw,44px);line-height:1.12;letter-spacing:-.05em;font-weight:400}
 .case-phi .b{font-size:14px;color:#63676e;line-height:1.7;max-width:480px}
+.contact .case-phi{margin-top:32px;display:block;margin-left:auto;margin-right:0;text-align:right;max-width:720px}
+.contact .kicker{justify-content:flex-end;margin-bottom:40px}
+.contact .case-phi .a{color:#f2f2f0}
+.contact .case-phi .b{color:#9da1a7;margin-top:24px;margin-left:auto;margin-right:0;font-size:15.5px;text-wrap:balance}
 
 /* principles */
 .prin{background:var(--paper);color:var(--ink)}
@@ -446,21 +449,12 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
   .convg-resolve .word,.convg-resolve .word .m,.convg-resolve .tm,.convg-resolve .say,.convg-resolve .model{opacity:1;transform:none}
   .hero canvas,.hero img.hero-canvas,.hero video.hero-canvas{transform:none !important}
 }
-
-/* ============ solutions preview ============ */
-.solv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-top:0;margin-top:56px}
-.solv-grid .card{display:block;width:auto;border:0}
-.solv-grid h3{font-size:clamp(19px,1.9vw,24px);letter-spacing:-.03em}
-.solv-grid .desc{margin-top:14px;font-size:15px;line-height:1.55;color:#5d626a;max-width:480px}
-.solv-grid .foot{margin-top:22px;padding-top:0}
-.solv-cta{margin-top:48px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-@media (max-width:920px){.solv-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header id="nav" data-theme="dark" role="banner">
   <div class="inner">
-    <a class="wordmark" href="#top" aria-label="Surg3 — home">surg<span class="three">3</span></a>
+    <a class="wordmark" href="#top" aria-label="Surg3 — home">SURG<span class="three">3</span></a>
     <div class="nav-right">
       <nav class="nav-links" aria-label="Primary">
         <a href="#how">How It Works</a>
@@ -491,7 +485,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
       <span class="mask-line"><span class="mi" style="--d:220ms">in your business.</span></span>
       <span class="mask-line"><span class="mi hero-h2" style="--d:380ms">It's buried in the work.</span></span>
     </h1>
-    <p class="lead" data-reveal style="--d:560ms"><span class="surg" aria-label="Surg3™"><span class="w" aria-hidden="true">surg<span>3</span></span><span class="tm" aria-hidden="true">™</span></span> finds the expensive friction inside real-estate businesses — and engineers the systems that remove it. Across revenue, operations, and the decisions that connect them.</p>
+    <p class="lead" data-reveal style="--d:560ms"><span class="surg" aria-label="Surg3™"><span class="w" aria-hidden="true">SURG<span>3</span></span><span class="tm" aria-hidden="true">™</span></span> finds the expensive friction inside real-estate businesses — and engineers the systems that remove it. Across revenue, operations, and the decisions that connect them.</p>
     <div class="cua" data-reveal style="--d:720ms">
       <a class="btn btn-solid" href="#contact">Find Your Leverage <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="solutions.html">Explore the Workflows</a>
@@ -601,7 +595,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
             <p class="foot"><b>Everything stays in place.</b> Nothing to migrate, nothing to re-train.</p>
           </div>
           <div class="row b" role="listitem">
-            <span class="mega" aria-label="Surg3™">surg<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
+            <span class="mega" aria-label="Surg3™">SURG<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
             <p class="desc">Integration · orchestration · workflow design. The coordinated layer installed above the stack — connecting what's already there, routing work, preserving context from first signal to closed outcome.</p>
             <p class="foot"><b>One layer, not another shelf of tools.</b></p>
           </div>
@@ -626,35 +620,6 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
     </div>
 </section>
 
-<!-- ================= WORKFLOW STACK (OVERVIEW) ================= -->
-<section class="v-sec h-sec light" id="solutions" data-theme="light" aria-label="The workflow stack">
-    <div class="v-wrap">
-      <div class="h-head">
-        <div class="card">
-          <p class="kicker"><span>WORKFLOW STACK</span></p>
-          <h2>Three independent workflows.</h2>
-          <p class="desc">Each is built for a different team in your business. Each stands alone — and each gets stronger when the others are in place.</p>
-        </div>
-      </div>
-      <div class="h-panel wf"><div class="card">
-        <h3>Revenue Engine</h3>
-       <p class="desc">Inquiry. Qualification. Routing. Follow-through. Closing. The work of moving demand from attention to outcome — before it cools.</p>
-       <p class="foot"><b>The question that matters:</b> how much demand are you already paying for that never becomes revenue?</p>
-      </div></div>
-      <div class="h-panel wf"><div class="card">
-        <h3>Operations Engine</h3>
-        <p class="desc">Requests. Maintenance. Vendors. Renewals. The work of keeping the business running without the coordination overhead.</p>
-        <p class="foot"><b>The question that matters:</b> what happens to your margins as the business grows?</p>
-        </div></div>
-        <div class="h-panel wf"><div class="card">
-          <h3>Executive Signal</h3>
-         <p class="desc">Reporting. Exceptions. Decisions. The work of knowing what matters — before it becomes a meeting.</p>
-         <p class="foot">
-           <b>The question that matters:</b> what do you have to ask for, that the business should simply tell you?
-         </p>
-        </div></div>
-    </div>
-</section><!-- ================= BUSINESS CASE ================= -->
 <section class="sec light" id="case" data-theme="light">
   <div class="wrap">
     <p class="kicker" data-reveal>THE BUSINESS CASE</p>
@@ -667,10 +632,6 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
       <div class="case"><span class="no">04</span><b>REDUCE RISK</b><p>Fewer dropped threads, fewer blind spots, fewer surprises.</p><span class="rule"></span></div>
       <div class="case"><span class="no">05</span><b>IMPROVE EXPERIENCE</b><p>Every one of these lands somewhere someone should notice.</p><span class="rule"></span></div>
     </div>
-    <div class="case-phi" data-reveal>
-      <p class="a">Every integration should have an economic reason to exist. No exceptions.</p>
-      <p class="b">That's why the first conversation isn't about tools. It's about where your money is going — and what would happen if it stopped moving through the same channels.</p>
-    </div>
   </div>
 </section>
 
@@ -678,9 +639,11 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
 <section class="sec dark contact" id="contact" data-theme="dark">
   <div class="gridbg" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker" data-reveal>THE CONSULTATION</p>
-    <h1 data-reveal style="--d:90ms">There's probably work in your business that no longer needs to be done the way it is today.</h1>
-    <p class="lead" data-reveal style="--d:220ms">Let's find it. The first consultation isn't a demo. It starts with where the friction lives in your operation — and what it's costing.</p>
+    <p class="kicker" data-reveal>CONSULTATION</p>
+    <div class="case-phi" data-reveal style="--d:90ms">
+      <p class="a">Every integration should have an economic reason to exist.<br>No exceptions.</p>
+      <p class="b">That's why the first conversation isn't about tools. It's about where your money is going — and what would happen if it stopped moving through the same channels.</p>
+    </div>
     <div class="cua" data-reveal style="--d:340ms">
       <a class="btn btn-solid" href="mailto:hello@surg3.io?subject=Finding%20leverage%20at%20our%20organization">Find Your Leverage <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="#leaks">Explore Surg3 <span class="ar">→</span></a>
@@ -694,7 +657,7 @@ footer .tag{letter-spacing:.42em;text-transform:uppercase;font-size:9px;color:#5
 
 <footer>
   <div class="fm">
-    <a class="wordmark" href="#top" style="font-size:18px">surg<span class="three">3</span></a>
+    <a class="wordmark" href="#top" style="font-size:18px">SURG<span class="three">3</span></a>
     <span class="tag">BUILD · SCALE · SURGE</span>
   </div>
   <div class="fm">

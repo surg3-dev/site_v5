@@ -375,6 +375,8 @@ body.loaded .mi{transform:translateY(0)}
 #operations .ops-flow .st.human .nm{color:#9db8f0}
 #operations .ops-flow .st.human .tag{color:#9db8f0}
 #operations .surg3-mega{color:#f2f2f0}
+#operations .prop-mid .surg3-mega{font-size:22px}
+#operations .prop-mid .surg3-mega .tm{font-size:.42em}
 #operations .ops-prin{border-top-color:var(--line-dark)}
 #operations .ops-prin .b{color:#9da1a7}
 #operations .ops-prin .pull{color:#f2f2f0}
@@ -399,6 +401,7 @@ body.loaded .mi{transform:translateY(0)}
 .vis-grid .v{background:var(--ink);padding:44px 26px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
 .vis-grid .v .no{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:#5f646b}
 .vis-grid .v .q{font-size:clamp(16px,1.5vw,21px);font-weight:500;letter-spacing:-.02em;margin-top:44px}
+.vis-grid .v .ex{font-size:11.5px;line-height:1.65;letter-spacing:.005em;color:#6f747b;margin-top:14px}
 .vis-scan{position:absolute;top:0;bottom:0;width:120px;left:0;background:linear-gradient(90deg,transparent,rgba(59,130,246,.07),transparent);animation:scan 8s var(--ease) infinite;pointer-events:none}
 @keyframes scan{0%{left:-15%}50%{left:85%}100%{left:-15%}}
 .vis-close{margin-top:74px;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
@@ -421,6 +424,13 @@ body.loaded .mi{transform:translateY(0)}
 .prin-big{font-size:clamp(36px,4.5vw,72px);letter-spacing:-.07em;line-height:.98;font-weight:400;max-width:900px;color:var(--ink)}
 .prin-list{margin-top:64px;border-top:1px solid var(--line);max-width:860px}
 .prin-list li{list-style:none;padding:26px 0;border-bottom:1px solid var(--line);font-size:clamp(15.2px,1.68vw,21.6px);letter-spacing:-.03em;color:#24262a}
+.wkq{margin-top:44px;font-size:15px;line-height:1.6;letter-spacing:.01em;color:#63676e;max-width:640px}
+.wkq b{color:#1c1e22;font-weight:500}
+#operations .wkq{color:#9da1a7}
+#operations .wkq b{color:#e9e9e7}
+#signal .vis-close{margin-top:44px}
+#signal .vis-close .a{text-align:right;margin-left:auto}
+#signal .wkq{margin-top:18px;text-align:right;margin-left:auto}
 .prin-note{font-size:14px;color:#63676e;line-height:1.7;max-width:480px;margin-top:28px}
 .prin-foot{margin-top:80px;display:flex;flex-direction:column;align-items:flex-start;gap:44px}
 .prin-btns{display:flex;gap:16px;flex-wrap:wrap}
@@ -496,8 +506,14 @@ html.sols body{background:var(--ink)}
 .sols-hero{position:relative;overflow:clip;padding:clamp(100px,14vh,170px) 6vw}
 .sols-hero .wrap{max-width:1320px;margin:0 auto;width:100%;position:relative;z-index:2}
 .sols-hero h1{font-size:clamp(36px,5.25vw,81px);font-weight:400;letter-spacing:-.07em;line-height:.94;max-width:1050px}
-.sols-hero .hl-mid,.sols-hero .hl-lo{color:#8B9099}
+.sols-hero .mask-line{padding-left:0}
+.sols-hero .mask-line:nth-child(2){padding-left:5vw}
+.sols-hero .mask-line:nth-child(3){padding-left:10vw}
+.sols-hero .mask-line:nth-child(4){padding-left:15vw}
+.sols-hero .hl-mid,.sols-hero .hl-lo{color:#69717D}
 .sols-hero .hl-hi{color:#F4F4F2}
+.sols-hero .lead{margin-top:40px}
+.sols-hero .cua{margin-top:28px}
 .cua .btn .ar{transition:transform .35s var(--ease)}
 .sec{min-height:100svh;min-height:62svh}
 
@@ -514,7 +530,7 @@ html.sols body{background:var(--ink)}
 <body class="sols">
 <header id="nav" data-theme="dark" role="banner">
   <div class="inner">
-    <a class="wordmark" href="index.html" aria-label="Surg3 — home">surg<span class="three">3</span></a>
+    <a class="wordmark" href="index.html" aria-label="Surg3 — home">SURG<span class="three">3</span></a>
     <div class="nav-right">
       <nav class="nav-links" aria-label="Primary">
         <a href="index.html#how">How It Works</a>
@@ -539,14 +555,16 @@ html.sols body{background:var(--ink)}
 <section class="sols-hero" id="top" data-theme="dark" aria-label="The workflow stack">
   <div class="gridbg" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker" data-reveal><span class="idx">SURG3</span> THE WORKFLOW STACK</p>
+    <p class="kicker" data-reveal><span class="idx">SURG3</span> WORKFLOW STACK</p>
     <h1>
       <span class="mask-line"><span class="mi" style="--d:80ms"><span class="hl-hi">Three</span> <span class="hl-lo">workflows</span></span></span>
       <span class="mask-line"><span class="mi" style="--d:220ms"><span class="hl-lo">each</span> <span class="hl-mid">built around</span></span></span>
-      <span class="mask-line"><span class="mi" style="--d:360ms"><span class="hl-lo">the way</span> <span class="hl-hi">you</span> <span class="hl-mid">run your business</span>.</span></span>
+      <span class="mask-line"><span class="mi" style="--d:360ms"><span class="hl-lo">the way</span> <span class="hl-hi">you</span> <span class="hl-mid">run your</span></span></span>
+      <span class="mask-line"><span class="mi" style="--d:460ms"><span class="hl-mid">business</span><span class="hl-hi">.</span></span></span>
     </h1>
     <p class="lead" data-reveal style="--d:200ms">Pick the one that matches where your friction lives. Each is built on the same layer, and each gets stronger when the others are in place.</p>
     <div class="cua" data-reveal style="--d:320ms">
+      <a class="btn btn-solid" href="index.html#contact">Find Your Leverage <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="index.html">Explore Surg3 <span class="ar">→</span></a>
     </div>
   </div>
@@ -564,6 +582,7 @@ html.sols body{background:var(--ink)}
       <div class="st"><span class="num">04</span><h3>Follow-through</h3><p>Momentum survives the handoff.</p></div>
       <div class="st last"><span class="num">05</span><h3>Outcome</h3><p>Action becomes revenue.</p></div>
     </div>
+    <p class="wkq" data-reveal style="--d:400ms"><b>The question that matters:</b> how much demand are you already paying for that never becomes revenue?</p>
   </div>
 </section>
 
@@ -605,7 +624,7 @@ html.sols body{background:var(--ink)}
       <div class="prop-mid" aria-label="into Surg3">
             <h4>The shared layer</h4>
             <span class="bar" aria-hidden="true"></span>
-            <span class="surg3-mega" aria-label="Surg3™">surg<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
+            <span class="surg3-mega" aria-label="Surg3™">SURG<span class="three" aria-hidden="true">3</span><span class="tm" aria-hidden="true">™</span></span>
             <span class="bar" aria-hidden="true"></span>
           </div>
       <div class="side">
@@ -621,6 +640,7 @@ html.sols body{background:var(--ink)}
     <div class="prop-goal" data-reveal>
       <p class="sub" data-reveal style="--d:160ms">Every layer of coordination that dissolves is capacity that reappears — in the residents, in the vendors, in the P&amp;L. The same business. A different cost of running it.</p>
     </div>
+    <p class="wkq" data-reveal><b>The question that matters:</b> what happens to your margins as the business grows?</p>
   </div>
 </section>
 
@@ -632,15 +652,15 @@ html.sols body{background:var(--ink)}
     <p class="lead" data-reveal style="--d:220ms">Executives don't need another dashboard. They need answers — the state of the business, in the form a decision can act on.</p>
     <div class="vis-grid" data-reveal style="--d:320ms">
       <div class="vis-scan" aria-hidden="true"></div>
-      <div class="v"><span class="no">SIGNAL / 01</span><p class="q">What changed?</p></div>
-      <div class="v"><span class="no">SIGNAL / 02</span><p class="q">What stalled?</p></div>
-      <div class="v"><span class="no">SIGNAL / 03</span><p class="q">What matters?</p></div>
-      <div class="v"><span class="no">SIGNAL / 04</span><p class="q">What needs a decision?</p></div>
+      <div class="v"><span class="no">SIGNAL / 01</span><p class="q">What changed?</p><p class="ex">Four leases renewed. Two tenants flagged maintenance. One manager is out this week.</p></div>
+      <div class="v"><span class="no">SIGNAL / 02</span><p class="q">What stalled?</p><p class="ex">A renewal queue waiting since March. A work order no one has confirmed.</p></div>
+      <div class="v"><span class="no">SIGNAL / 03</span><p class="q">What matters?</p><p class="ex">Net cash across the portfolio. The two margins that are thinnest.</p></div>
+      <div class="v"><span class="no">SIGNAL / 04</span><p class="q">What needs a decision?</p><p class="ex">A renewal the owners are waiting on. A vacancy that's been up longer than plan.</p></div>
     </div>
     <div class="vis-close" data-reveal>
       <p class="a">From scattered activity to usable signal.</p>
-      <span class="b">The layer between the business and its executives</span>
     </div>
+    <p class="wkq" data-reveal><b>The question that matters:</b> which parts of the business do you only know by asking around for?</p>
   </div>
 </section>
 
@@ -667,7 +687,7 @@ html.sols body{background:var(--ink)}
 
 <footer>
   <div class="fm">
-    <a class="wordmark" href="index.html" style="font-size:18px">surg<span class="three">3</span></a>
+    <a class="wordmark" href="index.html" style="font-size:18px">SURG<span class="three">3</span></a>
     <span class="tag">BUILD · SCALE · SURGE</span>
   </div>
   <div class="fm">
